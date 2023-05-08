@@ -9,6 +9,7 @@ const app = express();
 
 // configure settings
 require('dotenv').config();
+require('./config/database');
 
 // mount middleware
 app.use(express.json()); //bodyparser from express, also creates req.body
