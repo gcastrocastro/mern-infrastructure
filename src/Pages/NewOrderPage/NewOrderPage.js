@@ -1,6 +1,6 @@
 export default function NewOrderPage() {
   return (
-    <div>NewOrderPage</div>
+    <h1>NewOrderPage</h1>
   )
 }
 
