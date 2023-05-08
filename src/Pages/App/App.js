@@ -4,17 +4,21 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import {Route, Routes} from 'react-router-dom';
+import NavBar from '../../Components/NavBar/NavBar';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   return (
     <main className="App">
       { user ?
-        <Routes>
-          {/* {Route Components Go Here} */}
-          <Route path="/orders/new" element={<NewOrderPage />} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
-        </Routes>
+        <>
+          <NavBar/>
+          <Routes>
+            {/* {Route Components Go Here} */}
+            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/orders" element={<OrderHistoryPage />} />
+          </Routes>
+        </>
         :
         <AuthPage />
       }
