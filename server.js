@@ -13,12 +13,14 @@ require('./config/database');
 
 // mount middleware
 app.use(express.json()); //bodyparser from express, also creates req.body
+//express.json checks for incoming json data (formdata content-type needs to be json)
 app.use(logger('dev')); //dev logger
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico'))) //__dirname is a node.js variable that always point to the root directory
 app.use(express.static(path.join(__dirname, 'build'))) // we don't have to provide name of static folder bc it automatically look for the 'static' folder
 
 // mount routes
 // API Routes
+app.use('/api/users', require('./routes/api/users'));
 
 //catch-all route -- used to always serve index.html
 app.get('/*', (req,res) => {
