@@ -7,7 +7,7 @@ import {Route, Routes} from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   return (
     <main className="App">
       { user ?
