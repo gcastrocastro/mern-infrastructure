@@ -5,7 +5,7 @@ export async function signUp(userData){
         //second arg in fetch can be an options object {}
         method: 'POST',
         headers: {'Content-type': 'Application/json'}, //special mssg to provide additional details about request
-        body: JSON.stringify(userData)
+        body: JSON.stringify(userData) //converts js to text, necessary for sending data to database, on server side we then convert it to js again using express.json()
     }); 
 
     if (res.ok) {
