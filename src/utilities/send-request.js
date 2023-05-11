@@ -12,9 +12,9 @@ export default async function sendRequest(url, method = 'GET', payload = null){
 
     const token = getToken();
     if (token){
-        // options.headers = options.headers || {};
+        options.headers = options.headers || {};
         //code above results in the same as the code below, just written shorter
-        options.headers ||= {};
+        // options.headers ||= {};
         //prefacing with 'Bearer ' is recommended in HTTP specification 
         options.headers.Authorization = `Bearer ${token}`;
     }

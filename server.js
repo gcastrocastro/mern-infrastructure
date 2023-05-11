@@ -18,6 +18,8 @@ app.use(logger('dev')); //dev logger
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico'))) //__dirname is a node.js variable that always point to the root directory
 app.use(express.static(path.join(__dirname, 'build'))) // we don't have to provide name of static folder bc it automatically look for the 'static' folder
 
+app.use(require('./config/CheckToken'));
+
 // mount routes
 // API Routes
 app.use('/api/users', require('./routes/api/users'));
