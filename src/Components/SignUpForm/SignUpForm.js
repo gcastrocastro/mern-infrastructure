@@ -19,6 +19,7 @@ export default class SignUpForm extends Component {
     }
 
     handleSubmit = async (evt) => {
+        const {setUser} = this.props;
         evt.preventDefault();
         // alert(JSON.stringify(this.state));
         try {
@@ -26,7 +27,7 @@ export default class SignUpForm extends Component {
             delete formData.confirm;
             delete formData.error;
             const user = await signUp(formData);
-            console.log(user);
+            setUser(user);
         } catch (error) {
             this.setState({error: 'Sign Up Failed - Try Again'})
         }
