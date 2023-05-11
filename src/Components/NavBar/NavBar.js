@@ -4,7 +4,7 @@ import * as userService from '../../utilities/users-service';
 export default function NavBar({user, setUser}) {
     function handleLogout() {
         userService.logOut(); //removes token from localstorage
-        setUser(user); //nullify user state
+        setUser(null); //nullify user state
     }
 
     return(
@@ -13,6 +13,7 @@ export default function NavBar({user, setUser}) {
             &nbsp; | &nbsp;
             <Link to="/orders/new"> New Order </Link>
             {user && <span>&nbsp; Welcome, {user.name}</span>}
+            &nbsp; | &nbsp;
             <Link to="" onClick={handleLogout}>Log Out</Link>
         </nav>
     )
