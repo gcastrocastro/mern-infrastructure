@@ -33,6 +33,11 @@ export function getToken() {
     return token;
 }
 
+export function checkToken() {
+    return userAPI.checkToken() //returns promise
+    .then(dateStr => new Date(dateStr));
+}
+
 export function getUser() {
     const token = getToken();
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
