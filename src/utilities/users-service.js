@@ -10,6 +10,12 @@ export async function signUp(userData) {
     return getUser();
 }
 
+export async function login(credentials){
+    const token = await userAPI.login(credentials);
+    localStorage.setItem('token', token);
+    return getUser();
+}
+
 export function getToken() {
     //attempt to get token from localstorage
     const token = localStorage.getItem('token');
