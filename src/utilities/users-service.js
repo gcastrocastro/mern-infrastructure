@@ -2,6 +2,8 @@ import * as userAPI from './users-api'; //imports all functionality from this fi
 
 export async function signUp(userData) {
     const token = await userAPI.signUp(userData);
-    //TODO: more user service related tasks to be handled later
+    
+    localStorage.setItem('token', token);
+    
     return token;
 }
