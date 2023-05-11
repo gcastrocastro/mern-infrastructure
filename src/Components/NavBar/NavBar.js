@@ -14,7 +14,7 @@ export default function NavBar({user, setUser}) {
             <Link to="/orders/new"> New Order </Link>
             {user && <span>&nbsp; Welcome, {user.name}</span>}
             &nbsp; | &nbsp;
-            <Link to="" onClick={handleLogout}>Log Out</Link>
+            <Link to="/" onClick={handleLogout}>Log Out</Link>
         </nav>
     )
 }
